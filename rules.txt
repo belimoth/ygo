@@ -1,0 +1,150 @@
+
+BOARD
+
+         || - | Deck B    ||||||||| o | Hand B  ||| o | Crypt B
+
+  Bench B |||   Tempo A 4 | B | B | B | Tempo B 0   ||| Bank B 0
+ Bank A 3 |||   Tempo A 3 |   |   |   | Tempo B 1   ||| Bank B 1
+ Bank A 2 |||   Tempo A 2 |   |   |   | Tempo B 2   ||| Bank B 2
+ Bank A 1 |||   Tempo A 1 |   |   |   | Tempo B 3   ||| Bank B 3
+ Bank A 0 |||   Tempo A 0 | A | A | A | Tempo B 4   ||| Bench A
+                           Home Row A
+	  | o ||| Crypt A     | o ||||||||| Hand A   | - || Deck A
+
+
+RULES
+
+resource power cards are kept in the deck but are crypted when drawn, and another card drawn to replace
+
+
+when an actor is defeated their card moves to the BANK on the corresponding row; if they are defeated in the home row they are crypted instead
+
+cars are either Actor, Basic, or Tech
+- basics are played in the home row
+- actors are played on friendly basics with ap 0, gain AP until max and then called to action
+- techs are played from the hand, sometimes with a target, and sometimes they remain on the field for a continuous effect
+- actors, covert actors, cover tech can be played on friendly basics; when flipped covert tech moves to the bench
+
+RESOURCES
+
+AMMO
+CASH
+FIRE
+FUEL
+GOOP
+GROG
+GRUB
+LIFE
+MANA
+MEAT
+RUBY
+VOLT
+
+STAGES
+
+0. Upkeep Phase; ACTOR cards gain AP + 1
+1. Power Phase; Play a POWER card from CRYPT A to BANK A
+2. Spell Phase; Spend POWER cards from BANKS to play ACTOR or TECH cards to BASES or the BENCH
+3. Combat Phase; Actors in attack mode perform actions and advance automatically
+4. Draw Phase; Discard down to 7 in HAND, draw back to 7 in HAND, discard and redraw all POWER cards
+5. End Phase
+
+COMBAT
+
+units are deployed in either attack position or defense position
+
+attack position units automatically spend 1 AP (this can be a floating per-turn upkeep 1 AP if they are at max AP capacity) to move forward one tempo if the square is clear, or attack whatever is there if it isn't
+
+unit cards have a list of attacks in order of cost threshold; units have a counter indicating which move they are currently using; when the criteria for the next move is reached the counter increments;
+if the current move cannot be performed the counter inctements to the next workable move, wrapping around to the start when reaching the end of the lise
+
+attacks spend the ante AP in addition to their described cost
+
+after being attacked enemy units will counter attack if they are able
+
+units retreat automatically at 1 HP, when they reach the home row they convert remaining AP into HP and move to the bench to finish regenerating HP (benched units have no AP)
+
+units that reach 0 hp are incapacitated; extra rules for bleed out if desired, otherwise incapacitaed units move to the bank row and must wait there to be rescued by a friendly unit in the same row
+
+TERMINOLOGY - Unit Positions
+
+12:00 FU Attack Position
+12:00 FD Covert Attack Position
+ 3:00 FU Defense Position
+ 3:00 FD Covert Defense Position
+ 6:00 FU Retreat Position
+ 9:00 FU Inapacitated
+
+TERMINOLOGY - ALL
+
+Actor - units that can move and attack
+Basic - units that are played on friendly base squares
+AP - action points
+ATK - attack value for combat
+Body - size and health of unit
+Call - when a unit that was played previously finishes filling their AP and moves off their initial basic
+Cost - resources spent to play an actor or activate an effect
+Covert - units that are played face down
+DEF - defense value for combat
+Flag - unit faction allegiance
+Flee - when a unit retreats from combat
+Flip - when a covert unit is revealed during combat
+Goal - when a unit reaches an enemy basic
+Kill - when a unit defeats an enemy unit
+Loss - when a unit is defeated by an enemy unit
+Play - when a unit is played from the hand onto a friendly basic
+Trip - when a unit is punished for being unable to retreat during combat
+Type - the type of unit; actor, basic
+
+TERMINOLOGY - Card Types
+
+Type - the type of unit; actor, basic
+
+Actor - units that can move and attack
+Basic - units that are played on friendly base squares
+Flag - unit faction allegiance
+
+TERMINOLOGY - Combat
+
+ATK - attack value for combat
+Body - size and health of unit
+DEF - defense value for combat
+
+TERMINOLOGY - Unit Events
+
+Goal - when a unit reaches an enemy basic
+Play - when a unit is played from the hand onto a friendly basic
+
+TERMINOLOGY - Combat events
+
+Flee - when a unit retreats from combat
+Flip - when a covert unit is revealed during combat
+Kill - when a unit defeats an enemy unit
+Loss - when a unit is defeated by an enemy unit
+Trip - when a unit is punished for being unable to retreat during combat
+s
+TERMINOLOGY - Flags
+
+Beast, Devil, Frost, Matrix, Polymer, Radio, Resin, Volt
+Buddy, Engram, Enzyme, Zygote
+Crypto, Feral, Feudal, Federal, Astral, Cosmic, Chthonic
+
+TERMINOLOGY - Flags, Species
+
+Elf, Orc, Droid, Gorgon, Man, Toad, Vermin, Sphere
+Fauna
+Fauna - Arthropod
+Fauna - Canid, Felid, Hyaenid, Mustelid, Pinniped, Ursid
+Fauna - Cerapod, Eurypod, Sauropod, Theropod
+Fauna - Herbivore
+
+TERMINOLOGY - Flags, State
+
+Man - Armada, Asgard, Gannon, Skedar
+Man - SecBlu, SecHaz, SecMag, SecNul, SecRed, SecSil
+
+DRAFT MODE
+
+all players draw from the same deck or from a draw row and play power cards to the same crypt
+
+note: generalize the draw row concept to regular mode to replace scry etc

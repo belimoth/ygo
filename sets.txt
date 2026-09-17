@@ -1,0 +1,130 @@
+AAA | CW0 | CHAR WARS Episode 0                                       |
+AAA | CW1 | CHAR WARS Episode 1                                       |
+AAA | CW2 | CHAR WARS Episode 2                                       |
+AAA | CW3 | CHAR WARS Episode 3                                       |
+AAA | CW4 | CHAR WARS Episode 4                                       |
+AAA | D4W | DRAUGB Part 4 Wastes                                      | Chthonic Devil Man, Cosmic Crystal Elf
+AAA | GQA | Gate Quake Antique                                        |
+AAA | HH0 | Horns VS Halos 0                                          |
+AAA | SH1 | Swordhenge                                                |
+AAA | SH2 | Swordhenge 2                                              |
+AAA | SH3 | Swordhenge 3                                              |
+AAA | SHX | Swordhenge X                                              |
+AAA | TOR | TORMENT                                                   |
+AAA | TYR | Tyrant Nexus                                              |
+EEE | AQD | Aqua Dementia                                             |
+EEE | ARK | --                                                        |
+EEE | BLU | Blue Monsoon                                              |
+EEE | CRY | Cryoshock                                                 | Astral Frost Man FUEL CASH, Cosmic Frost Gorgon
+EEE | D1H | DRAUGB Part 1 Harbor                                      | NulSec Man, Gorgon Man, Gorgon Beast Man, Gorgon Beast Fauna
+EEE | FII | The Life Aquatic with Francine ii Descartes               |
+EEE | HH3 | Horns VS Halos 3                                          |
+EEE | XPY | Xenoparity                                                | Cosmic Devil Gorgon
+FFF | BGX | untitled 4XXX body harvest + blue gender chapter          | Man, Devil Arthropod
+FFF | HC1 | Howling Commandos                                         |
+FFF | HC1 | Howling Commandos 2                                       |
+FFF | HCA | --                                                        |
+FFF | HCF | --                                                        |
+FFF | HCV | --                                                        |
+FFF | HCX | Howling Commandos X                                       |
+FFF | PP1 | Plastic Platoon                                           | Resin Man
+FFF | PPX | Plastic Platoon: Hazard Company                           |
+HHH | D3F | DRAUGB Part 3 Frontier                                    | Astral NulSec Man
+HHH | DIS | --                                                        |
+HHH | GQV | Gate Quake Vintage                                        |
+HHH | HH1 | Horns VS Halos 1                                          |
+HHH | KT1 | King of the Drill                                         |
+HHH | KT2 | King of the Drill 2: Oil Terminal                         |
+HHH | L12 | Lahaina Noon                                              |
+HHH | PYR | Pyrebola                                                  | Feudal Chthonic Man, Astral Matrix, Devil Fauna
+HHH | YAV | YAVNAV                                                    |
+III | 3FP |                                                           |
+III | 3FP | --                                                        |
+III | BUA | --                                                        |
+III | BUA | --                                                        |
+III | BUV | --                                                        |
+III | BUV | --                                                        |
+III | BUX | --                                                        |
+III | D0P | DRAUGB Part 0 Prologue                                    | NulSec Man, Feral Beast Orc, Enzyme
+III | GQ2 | Gate Quake 2                                              |
+III | WA0 | Wuerm Arctigeddon                                         | Frost Man FIRE MEAT, Frost Orc MEAT GRUB, Frost Fauna MEAT, Canid Felid Ursid Mustelid Hyaenid Pinniped Herbivore
+III | WA1 | Wuerm Arctigeddon Modern                                  |
+OOO | D2C | DRAUGB Part 2 Colony                                      | Astral NulSec Man, Feudal Chthonic Devil
+OOO | DH1 | DEAD HAND                                                 | Radio Man, Radio Fauna, Volt Ghost Droid Man, Engram Shell
+OOO | DH2 | DEAD HAND 2                                               |
+OOO | DHX | DEAD HAND X                                               |
+OOO | GQ1 | Gate Quake 1                                              |
+OOO | HH2 | Horns VS Halos 2                                          |
+OOO | IPK | Incarnadine Peak                                          |
+OOO | USG | Upon the Silver Globe                                     | Cosmic Chthonic Man, Cosmic Arthropod Elf
+OOO | ZQR | ZIQQRRAT                                                  |
+UUU | GQF | Gate Quake Fossil                                         |
+UUU | SC1 | SWAT CITY                                                 | Federal Matrix Man VOLT GOOP, Droid Engram Polymer
+UUU | SCX | SWAT CITY X                                               | Feral Matrix Man,
+UUU | V00 | Vermintithe Zero: Amphibian Dawn                          | Feudal Vermin Toad
+UUU | V0X | Vermintithe Zero X: Amphibian Dusk                        | Astral Matrix Man, Beast Vermin Toad Sphere
+UUU | VT1 | Vermintithe                                               | Law Vermin CASH GROG, Rogue Vermin
+UUU | VT2 | Vermintithe 2                                             | Feudal Vermin WOOD FIRE, Beast Vermin Orc LIFE
+UUU | VT3 | Vermintithe 3                                             | Federal Vermin, Federal Matrix
+UUU | YG0 | untitled 19XX vermintithe -- swat city bridge BCG chapter | Feudal Matrix Man LIFE CASH, Feral Vermin Orc GRUB LIFE
+UUU | YGO | untitled BCG chapter                                      | Cosmic Matrix Man MANA
+VVV | AI0 | Alien Intel Classic                                       |
+VVV | AI1 | Alien Intel                                               | Zenith Man, Armada AMMO VOLT, Asgard, Gannon CASH AMMO, Skedar
+VVV | AI2 | Alien Intel 2                                             |
+VVV | AIA | --                                                        |
+VVV | AIF | --                                                        |
+VVV | AIV | --                                                        |
+VVV | AIX | Alien Intel X                                             |
+VVV | AIY | Alien Intel Y                                             |
+VVV | AIZ | Alien Intel Z                                             |
+VVV | FHB | Frost Hauler Buffalo                                      |
+WWW | BF0 | Blood Flush Antique                                       |
+WWW | BF1 | Blood Flush                                               |
+WWW | BF2 | Blood Flush 2                                             |
+WWW | BF3 | Blood Flush 3                                             |
+WWW | BFX | Blood Flush X                                             |
+WWW | GQ3 | Gate Quake 3                                              |
+WWW | HHX | Horns VS Halos X                                          |
+WWW | IGO | INDIGO                                                    |
+WWW | OWL | Minerva's OWL                                             |
+XXX | D5T | DRAUGB Part 5 Tower                                       |
+XXX | GQW | Gate Quake W                                              |
+XXX | GQX | Gate Quake X                                              |
+XXX | PSK | Primitive Streak                                          | Radio Sphere
+XXX | SMR | Simir                                                     |
+YYY | RC0 | RED CRY Zero                                              | RedSec Man AMMO, Beast Fauna, Arthropod Cerapod Eurypod Sauropod Theropod, MEAT
+YYY | HWA | Horse War Antique                                         |
+YYY | RC2 | RED CRY 2                                                 |
+YYY | HWC | Horse War Classic                                         |
+YYY | RC1 | RED CRY                                                   |
+YYY | HW1 | Horse War                                                 |
+YYY | HW2 | Horse War 2                                               |
+YYY | DD1 | Demolidrome                                               |
+YYY | DD2 | Demolidrome 2                                             |
+YYY | RCX | RED CRY X                                                 |
+
+
+
+
+
+
+
+
+ WWWWW   .      .      .      .      .      .      .      .      .      .        COSMOS W
+WWWWWW   ----------------------------------------------------------------------  DEATH W
+           YYY    FFF    VVV    UUU    AAA    HHH    OOO    EEE    III    WWW    COSMOS X
+0XXXXX   ------------- • GQW  -------------------------------------------------  BIRTH X
+ 0XXXX   • RC0  • HCF  • AIF  • GQF  . HH0  . HH1  . HH2  . HH3  ◘ WA0  • HHX    NADIR A
+  0XXX   • HWA  • HCA  • AIA  Τ V00  • GQA  ◘ PYR  ◘ ZQR  • ARK  • BUA  • BF0    NADIR B
+  1XXX   • RC2  • HCV  • AIV  ◘ VT*  ◘ SH*  • GQV  • IPK  ◘ AQD  • BUV  ◘ GST    NADIR C
+  19XX   • HWC  ◘ HC*  ◘ AI0  • YG0  • SHX  ◘ YAV  ◘ GQ1  ◘ BLU  ◘ D0P  ◘ BF*    DATELINE
+  21XX   ◘ RC1  ◘ PP1  ◘ AI*  ◘ SC1  • TYR  • DIS  • DH*  • D1H  ◘ 3FP  ◘ IGO    INCLINE
+  2XXX   ◘ HW*  • HCX  • AIY  • V0X  • TOR  • KT*  • D2C  • FII  • GQ2  • OWL    ZENITH
+  3XXX   • DD*  • PPX  • AIX  • SCX  • CW*  • D3F  • DHX  • CRY  • WA1  • GQ3    DECLINE
+  4XXX   • RCX  • BGX  • FHB  Τ YGO  • D4W  • L12  • USG  • XPY  • BUX  • BFX    OBLIVION
+  XXXX   ------ • GQX  ------ • D5T  ------------------------------------------  FLATLINE
+ XXXXX   .      .      • D6D  .      .      .      .      .      .      .        REDACTED
+XXXXXX   -------------------- Τ PSK  ------------------------------------------  DEATH X
+                                       ???    ???    ???                         COSMOS Y
+0YYYYY   ---------------------------------- X ---------------------------------  BIRTH Y
+ 0YYYY   .      .      .      .      .      .      • SMR  .      .      .
