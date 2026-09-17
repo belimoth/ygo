@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang=en-us>
+<head>
+<meta charset=utf-8>
+<title>YGO</title>
+
+<style>
+
+*, *::before, *::after {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body {
+	position: relative;
+	font-size: 0;
+	font-family: 'Consolas', 'Courier New', Courier, monospace;
+	user-select: none; -webkit-user-select: none;
+	overflow: hidden;
+}
+
+body > div {
+	display: flex;
+	justify-content: center;
+}
+
+body > div > svg {
+	position: absolute;
+	top: 0;
+}
+
+svg {
+	height: calc( 100vh - 64px );
+	font-size: 4px;
+	font-weight: 1000;
+}
+
+svg.play g.grid rect {
+	fill: #EEE;
+	/* stroke: #FFF; */
+	/* stroke-width: 4px; */
+}
+
+svg.play g.goal rect,
+svg.play g.play rect,
+svg.play g.home rect,
+svg.play g.over rect {
+	fill: transparent;
+	stroke-width: 1px;
+}
+
+svg.play g.goal rect {
+	stroke: #CAA;
+}
+
+svg.play g.home rect {
+	stroke: #AAC;
+}
+
+svg.play g.over rect {
+	stroke: #FFD819;
+	opacity: 0;
+}
+
+svg.play text {
+	fill: #AAC;
+}
+
+svg.play g.play rect {
+	stroke: url(#gradient-fill);
+}
+
+svg.play g.over rect:hover {
+	 opacity: 1;
+}
+
+svg.play g.hide,
+svg.play g.hide,
+svg.play g.hide,
+svg.play g.hide {
+	filter: blur( 4px );
+}
+
+@keyframes         spin { 100% { transform:rotate(180deg); }}
+@-moz-keyframes    spin { 100% { -moz-transform: rotate(180deg); }}
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(180deg); }}
+
+@keyframes         turn { 100% { color: #CAA; }}
+@-moz-keyframes    turn { 100% { color: #CAA; }}
+@-webkit-keyframes turn { 100% { color: #CAA; }}
+
+@keyframes         fade { 100% { opacity: 0; }}
+@-moz-keyframes    fade { 100% { opacity: 0; }}
+@-webkit-keyframes fade { 100% { opacity: 0; }}
+
+svg {
+	margin: 32px;
+}
+
+svg.play {
+	background: #FFF;
+}
+
+body {
+	color: #AAC;
+	background: currentColor;
+}
+
+svg.play {
+	color: #AAC;
+	outline: 32px solid currentColor;
+}
+
+body.turn {
+	-webkit-animation: turn 1s linear forwards;
+	-moz-animation:    turn 1s linear forwards;
+	animation:         turn 1s linear forwards;
+};
+
+body.turn svg {
+	-webkit-animation: spin 1s ease-in-out forwards, turn 1s step-start forwards;
+	-moz-animation:    spin 1s ease-in-out forwards, turn 1s step-start forwards;
+	animation:         spin 1s ease-in-out forwards, turn 1s step-start forwards;
+};
+
+body.turn svg.play g.home text {
+	-webkit-animation: fade 1s linear forwards;
+	-moz-animation:    fade 1s linear forwards;
+	animation:         fade 1s linear forwards;
+}
+
+</style>
+
+<body>
+
+<div>
+
+<svg viewbox="3 0 314 240" class=play>
+
+<defs>
+<linearGradient id="gradient-fill" x1="0" y1="0" x2="0" y2="100%">
+<stop offset="0" stop-color="#ccaaaa" />
+<stop offset="1" stop-color="#aaaacc" />
+</linearGradient>
+</defs>
+
+<g class=grid>
+<rect x=5   y=2 width=24 height=32></rect><rect x=31   y=2 width=24 height=32></rect><rect x=57   y=2 width=24 height=32></rect><rect x=83   y=2 width=24 height=32></rect><rect x=109   y=2 width=24 height=32></rect><rect x=135   y=2 width=24 height=32></rect><rect x=161   y=2 width=24 height=32></rect><rect x=187   y=2 width=24 height=32></rect><rect x=213   y=2 width=24 height=32></rect><rect x=239   y=2 width=24 height=32></rect><rect x=265   y=2 width=24 height=32></rect><rect x=291   y=2 width=24 height=32></rect>
+<rect x=5  y=36 width=24 height=32></rect><rect x=31  y=36 width=24 height=32></rect><rect x=57  y=36 width=24 height=32></rect><rect x=83  y=36 width=24 height=32></rect><rect x=109  y=36 width=24 height=32></rect><rect x=135  y=36 width=24 height=32></rect><rect x=161  y=36 width=24 height=32></rect><rect x=187  y=36 width=24 height=32></rect><rect x=213  y=36 width=24 height=32></rect><rect x=239  y=36 width=24 height=32></rect><rect x=265  y=36 width=24 height=32></rect><rect x=291  y=36 width=24 height=32></rect>
+<rect x=5  y=70 width=24 height=32></rect><rect x=31  y=70 width=24 height=32></rect><rect x=57  y=70 width=24 height=32></rect><rect x=83  y=70 width=24 height=32></rect><rect x=109  y=70 width=24 height=32></rect><rect x=135  y=70 width=24 height=32></rect><rect x=161  y=70 width=24 height=32></rect><rect x=187  y=70 width=24 height=32></rect><rect x=213  y=70 width=24 height=32></rect><rect x=239  y=70 width=24 height=32></rect><rect x=265  y=70 width=24 height=32></rect><rect x=291  y=70 width=24 height=32></rect>
+<rect x=5 y=104 width=24 height=32></rect><rect x=31 y=104 width=24 height=32></rect><rect x=57 y=104 width=24 height=32></rect><rect x=83 y=104 width=24 height=32></rect><rect x=109 y=104 width=24 height=32></rect><rect x=135 y=104 width=24 height=32></rect><rect x=161 y=104 width=24 height=32></rect><rect x=187 y=104 width=24 height=32></rect><rect x=213 y=104 width=24 height=32></rect><rect x=239 y=104 width=24 height=32></rect><rect x=265 y=104 width=24 height=32></rect><rect x=291 y=104 width=24 height=32></rect>
+<rect x=5 y=138 width=24 height=32></rect><rect x=31 y=138 width=24 height=32></rect><rect x=57 y=138 width=24 height=32></rect><rect x=83 y=138 width=24 height=32></rect><rect x=109 y=138 width=24 height=32></rect><rect x=135 y=138 width=24 height=32></rect><rect x=161 y=138 width=24 height=32></rect><rect x=187 y=138 width=24 height=32></rect><rect x=213 y=138 width=24 height=32></rect><rect x=239 y=138 width=24 height=32></rect><rect x=265 y=138 width=24 height=32></rect><rect x=291 y=138 width=24 height=32></rect>
+<rect x=5 y=172 width=24 height=32></rect><rect x=31 y=172 width=24 height=32></rect><rect x=57 y=172 width=24 height=32></rect><rect x=83 y=172 width=24 height=32></rect><rect x=109 y=172 width=24 height=32></rect><rect x=135 y=172 width=24 height=32></rect><rect x=161 y=172 width=24 height=32></rect><rect x=187 y=172 width=24 height=32></rect><rect x=213 y=172 width=24 height=32></rect><rect x=239 y=172 width=24 height=32></rect><rect x=265 y=172 width=24 height=32></rect><rect x=291 y=172 width=24 height=32></rect>
+<rect x=5 y=206 width=24 height=32></rect><rect x=31 y=206 width=24 height=32></rect><rect x=57 y=206 width=24 height=32></rect><rect x=83 y=206 width=24 height=32></rect><rect x=109 y=206 width=24 height=32></rect><rect x=135 y=206 width=24 height=32></rect><rect x=161 y=206 width=24 height=32></rect><rect x=187 y=206 width=24 height=32></rect><rect x=213 y=206 width=24 height=32></rect><rect x=239 y=206 width=24 height=32></rect><rect x=265 y=206 width=24 height=32></rect><rect x=291 y=206 width=24 height=32></rect>
+</g>
+
+<g class=goal>
+	<rect  x=5 y=2  width=76 height=32></rect>
+	<rect  x=83 y=2  width=24 height=32></rect>
+	<rect x=109 y=2 width=102 height=32></rect>
+
+	<rect  x=5 y=36  width=76 height=32></rect>
+	<rect  x=83 y=36  width=24 height=32></rect>
+	<rect x=109 y=36 width=102 height=32></rect><text x=110 y=40>GOAL</text>
+
+	<rect x=213 y=2 width=24 height=32></rect>
+	<rect x=239 y=2 width=24 height=32></rect>
+	<rect x=213 y=36 width=24 height=32></rect>
+	<rect x=239 y=36 width=76 height=32></rect>
+	<rect x=239 y=70 width=76 height=32></rect>
+	<rect x=239 y=104 width=76 height=32></rect>
+	<rect x=239 y=138 width=76 height=32></rect>
+
+	<rect x=213  y=70 width=24 height=32></rect>
+	<rect x=213 y=104 width=24 height=32></rect>
+	<rect x=213 y=138 width=24 height=32></rect>
+</g>
+
+<g class=play>
+<rect x=109 y=70 width=24 height=100></rect>
+<rect x=135 y=70 width=24 height=100></rect>
+<rect x=161 y=70 width=24 height=100></rect>
+<rect x=187 y=70 width=24 height=100></rect>
+</g>
+
+<g class=home>
+
+<rect x=5 y=70 width=76 height=32></rect><text x=6 y=74>SINK</text>
+<rect x=5 y=104 width=76 height=32></rect><text x=6 y=108>SINK</text>
+<rect x=5 y=138 width=76 height=32></rect><text x=6 y=142>SINK</text>
+<rect x=83  y=70 width=24 height=32></rect><text x=84  y=74>BANK</text>
+<rect x=83 y=104 width=24 height=32></rect><text x=84 y=108>BANK</text>
+<rect x=83 y=138 width=24 height=32></rect><text x=84 y=142>BANK</text>
+
+<rect x=5 y=172 width=76 height=32></rect><text x=6 y=176>SINK</text>
+<rect x=83 y=172 width=24 height=32></rect><text x=84 y=176>BANK</text>
+<rect x=83 y=206 width=24 height=32></rect><text x=84 y=210>TOMB</text>
+<rect x=57 y=206 width=24 height=32></rect><text x=58 y=210>OUST</text>
+
+<rect x=109 y=172 width=102 height=32></rect><text x=110 y=176>HOME</text>
+<rect x=213 y=172 width=24 height=32></rect><text x=214 y=176>WAIT</text>
+<rect x=239 y=172 width=76 height=32></rect><text x=240 y=176>HEAL</text>
+
+<rect x=109 y=206 width=102 height=32></rect><text x=110 y=210>HAND</text>
+<rect x=213 y=206 width=24 height=32></rect><text x=214 y=210>DECK</text>
+<rect x=239 y=206 width=76 height=32></rect><text x=240 y=210>SWAP</text>
+</g>
+
+<g class=over>
+<rect x=5   y=2 width=24 height=32></rect><rect x=31   y=2 width=24 height=32></rect><rect x=57   y=2 width=24 height=32></rect><rect x=83   y=2 width=24 height=32></rect><rect x=109   y=2 width=24 height=32></rect><rect x=135   y=2 width=24 height=32></rect><rect x=161   y=2 width=24 height=32></rect><rect x=187   y=2 width=24 height=32></rect><rect x=213   y=2 width=24 height=32></rect><rect x=239   y=2 width=24 height=32></rect><rect x=265   y=2 width=24 height=32></rect><rect x=291   y=2 width=24 height=32></rect>
+<rect x=5  y=36 width=24 height=32></rect><rect x=31  y=36 width=24 height=32></rect><rect x=57  y=36 width=24 height=32></rect><rect x=83  y=36 width=24 height=32></rect><rect x=109  y=36 width=24 height=32></rect><rect x=135  y=36 width=24 height=32></rect><rect x=161  y=36 width=24 height=32></rect><rect x=187  y=36 width=24 height=32></rect><rect x=213  y=36 width=24 height=32></rect><rect x=239  y=36 width=24 height=32></rect><rect x=265  y=36 width=24 height=32></rect><rect x=291  y=36 width=24 height=32></rect>
+<rect x=5  y=70 width=24 height=32></rect><rect x=31  y=70 width=24 height=32></rect><rect x=57  y=70 width=24 height=32></rect><rect x=83  y=70 width=24 height=32></rect><rect x=109  y=70 width=24 height=32></rect><rect x=135  y=70 width=24 height=32></rect><rect x=161  y=70 width=24 height=32></rect><rect x=187  y=70 width=24 height=32></rect><rect x=213  y=70 width=24 height=32></rect><rect x=239  y=70 width=24 height=32></rect><rect x=265  y=70 width=24 height=32></rect><rect x=291  y=70 width=24 height=32></rect>
+<rect x=5 y=104 width=24 height=32></rect><rect x=31 y=104 width=24 height=32></rect><rect x=57 y=104 width=24 height=32></rect><rect x=83 y=104 width=24 height=32></rect><rect x=109 y=104 width=24 height=32></rect><rect x=135 y=104 width=24 height=32></rect><rect x=161 y=104 width=24 height=32></rect><rect x=187 y=104 width=24 height=32></rect><rect x=213 y=104 width=24 height=32></rect><rect x=239 y=104 width=24 height=32></rect><rect x=265 y=104 width=24 height=32></rect><rect x=291 y=104 width=24 height=32></rect>
+<rect x=5 y=138 width=24 height=32></rect><rect x=31 y=138 width=24 height=32></rect><rect x=57 y=138 width=24 height=32></rect><rect x=83 y=138 width=24 height=32></rect><rect x=109 y=138 width=24 height=32></rect><rect x=135 y=138 width=24 height=32></rect><rect x=161 y=138 width=24 height=32></rect><rect x=187 y=138 width=24 height=32></rect><rect x=213 y=138 width=24 height=32></rect><rect x=239 y=138 width=24 height=32></rect><rect x=265 y=138 width=24 height=32></rect><rect x=291 y=138 width=24 height=32></rect>
+<rect x=5 y=172 width=24 height=32></rect><rect x=31 y=172 width=24 height=32></rect><rect x=57 y=172 width=24 height=32></rect><rect x=83 y=172 width=24 height=32></rect><rect x=109 y=172 width=24 height=32></rect><rect x=135 y=172 width=24 height=32></rect><rect x=161 y=172 width=24 height=32></rect><rect x=187 y=172 width=24 height=32></rect><rect x=213 y=172 width=24 height=32></rect><rect x=239 y=172 width=24 height=32></rect><rect x=265 y=172 width=24 height=32></rect><rect x=291 y=172 width=24 height=32></rect>
+<rect x=5 y=206 width=24 height=32></rect><rect x=31 y=206 width=24 height=32></rect><rect x=57 y=206 width=24 height=32></rect><rect x=83 y=206 width=24 height=32></rect><rect x=109 y=206 width=24 height=32></rect><rect x=135 y=206 width=24 height=32></rect><rect x=161 y=206 width=24 height=32></rect><rect x=187 y=206 width=24 height=32></rect><rect x=213 y=206 width=24 height=32></rect><rect x=239 y=206 width=24 height=32></rect><rect x=265 y=206 width=24 height=32></rect><rect x=291 y=206 width=24 height=32></rect>
+</g>
+
+</svg>
+
+<svg viewbox="0 0 320 240" class=menu>
+</svg>
+
+</div>
+
+<script>
+
+function app_storage_test( type ) {
+	try {
+		let storage = window[type], x = "__storage_test__";
+		storage.setItem( x, x );
+		storage.removeItem( x );
+		return true;
+	} catch( ex ) {
+		return ex instanceof DOMException && (
+			e.code == 22                   ||
+			e.code == 1014                 ||
+			e.name == "QuotaExceededError" ||
+			e.name == "NS_ERROR_DOM_QUOTA_REACHED"
+		) && storage.length != 0;
+	}
+}
+
+function app_storage() {
+	this.session = 0;
+
+	this.get = key => {};
+	this.set = key => {};
+
+	if ( ! app_storage_test( "localStorage" ) ) return;
+	if ( localStorage.length > 0 ) { /* TODO */ }
+
+	window.addEventListener( "storage", function( event ) {
+		// TODO
+	});
+
+	this.get = key => localStorage.getItem( key );
+	this.set = ( key, value ) => localStorage.setItem( key, value );
+
+	this.usage = function() {
+		var total = 0;
+
+		for ( var i = 0; i < localStorage.length; i += 1 ){
+			var key = localStorage.key( i );
+			var amount = ( ( key.length + localStorage[ key ].length ) * 2 ) / 1024 / 1024;
+			total += amount;
+		}
+
+		return total.toFixed(2) + " MB";
+	}
+}
+
+function app_t() {
+	this.cdef = [];
+	this.card = [];
+	this.storage = new app_storage();
+}
+
+function cdef_t( set, type, name, power_type, flag, hero, verb ) {
+	this.cset = set;
+	this.type = type;
+	this.name = name;
+
+	if ( type == ct.power ) {
+		this.power_type = power_type;
+	} else {
+		this.flag = flag;
+		this.hero = hero;
+		this.verb = verb;
+
+		if ( type == ct.actor ) {
+
+		}
+
+		if ( type == ct.basic ) {
+
+		}
+	}
+}
+
+const cset = {}; {
+	var i = 0;
+
+	cset.xxx = i; i++;
+	cset.ai0 = i; i++;
+	cset.ai1 = i; i++;
+	cset.ai2 = i; i++;
+	cset.aia = i; i++;
+	cset.aif = i; i++;
+	cset.aiv = i; i++;
+	cset.aix = i; i++;
+	cset.aiy = i; i++;
+	cset.aiz = i; i++;
+	cset.aqd = i; i++;
+	cset.ark = i; i++;
+	cset.bf0 = i; i++;
+	cset.bf1 = i; i++;
+	cset.bf2 = i; i++;
+	cset.bf3 = i; i++;
+	cset.bfx = i; i++;
+	cset.bgx = i; i++;
+	cset.blu = i; i++;
+	cset.bua = i; i++;
+	cset.bua = i; i++;
+	cset.buv = i; i++;
+	cset.buv = i; i++;
+	cset.bux = i; i++;
+	cset.cry = i; i++;
+	cset.cw0 = i; i++;
+	cset.cw1 = i; i++;
+	cset.cw2 = i; i++;
+	cset.cw3 = i; i++;
+	cset.cw4 = i; i++;
+	cset.d0p = i; i++;
+	cset.d1h = i; i++;
+	cset.d2c = i; i++;
+	cset.d3f = i; i++;
+	cset.d4w = i; i++;
+	cset.d5t = i; i++;
+	cset.dd1 = i; i++;
+	cset.dd2 = i; i++;
+	cset.dh1 = i; i++;
+	cset.dh2 = i; i++;
+	cset.dhx = i; i++;
+	cset.dis = i; i++;
+	cset.fhb = i; i++;
+	cset.fii = i; i++;
+	cset.gq1 = i; i++;
+	cset.gq2 = i; i++;
+	cset.gq3 = i; i++;
+	cset.gqa = i; i++;
+	cset.gqf = i; i++;
+	cset.gqv = i; i++;
+	cset.gqw = i; i++;
+	cset.gqx = i; i++;
+	cset.hc1 = i; i++;
+	cset.hc1 = i; i++;
+	cset.hca = i; i++;
+	cset.hcf = i; i++;
+	cset.hcv = i; i++;
+	cset.hcx = i; i++;
+	cset.hh0 = i; i++;
+	cset.hh1 = i; i++;
+	cset.hh2 = i; i++;
+	cset.hh3 = i; i++;
+	cset.hhx = i; i++;
+	cset.hw1 = i; i++;
+	cset.hw2 = i; i++;
+	cset.hwa = i; i++;
+	cset.hwc = i; i++;
+	cset.igo = i; i++;
+	cset.ipk = i; i++;
+	cset.kt1 = i; i++;
+	cset.kt2 = i; i++;
+	cset.l12 = i; i++;
+	cset.owl = i; i++;
+	cset.pp1 = i; i++;
+	cset.ppx = i; i++;
+	cset.psk = i; i++;
+	cset.pyr = i; i++;
+	cset.rc0 = i; i++;
+	cset.rc1 = i; i++;
+	cset.rc2 = i; i++;
+	cset.rcx = i; i++;
+	cset.sc1 = i; i++;
+	cset.scx = i; i++;
+	cset.sh1 = i; i++;
+	cset.sh2 = i; i++;
+	cset.sh3 = i; i++;
+	cset.shx = i; i++;
+	cset.smr = i; i++;
+	cset.tfp = i; i++;
+	cset.tfp = i; i++;
+	cset.tor = i; i++;
+	cset.tyr = i; i++;
+	cset.usg = i; i++;
+	cset.v00 = i; i++;
+	cset.v0x = i; i++;
+	cset.vt1 = i; i++;
+	cset.vt2 = i; i++;
+	cset.vt3 = i; i++;
+	cset.wa0 = i; i++;
+	cset.wa1 = i; i++;
+	cset.xpy = i; i++;
+	cset.yav = i; i++;
+	cset.yg0 = i; i++;
+	cset.ygo = i; i++;
+	cset.zqr = i; i++;
+};
+
+// card type
+
+const ct = {
+	power: 0,
+	actor: 1,
+	basic: 2,
+	fauna: 3,
+	stuff: 3,
+};
+
+// power type
+
+const pt = {
+	none: 0x0,
+	ammo: 0x1,
+	cash: 0x2,
+	fire: 0x3,
+	fuel: 0x4,
+	goop: 0x5,
+	grog: 0x6,
+	grub: 0x7,
+	life: 0x8,
+	mana: 0x9,
+	meat: 0xA,
+	ruby: 0xB,
+	volt: 0xC,
+};
+
+// stack type
+
+const st = {
+	deck: 0b00000001,
+	hand: 0b00000010,
+	wait: 0b00000100,
+	home: 0b00001000,
+	base: 0b00010000,
+	rank: 0b00100000,
+	file: 0b01000000,
+	bank: 0b10000000
+};
+
+// exe
+
+var exe_cost = "";
+var exe_name = "";
+var exe_desc = "";
+
+function exe( string ) {
+	[cost, name, desc ] = string.split( "|" );
+	exe_cost = cost;
+	exe_name = name;
+	exe_desc = desc;
+}
+
+//
+
+function exe_pick_card( name_or_flag, p0_filter, p1_filter, quantity ) {
+
+}
+
+function exe_pick_file() {
+
+}
+
+function exe_pick_rank() {
+
+}
+
+//
+
+function exe_armada_deploy() {
+	exe( "VOLT 0 - 3 | Deploy | call Armada Goon on-base or on-bench to any reachable tempo as well as all previous tempos" );
+	var unit = exe_pick_card( "Armada Goon", st.base | st.wait, 0, 3 );
+	var file = exe_pick_file();
+}
+
+function exe_armada_summon_1() {
+	exe( "VOLT  5 - 1 | Summon I | play Armada Goon from hand or crypt" );
+}
+
+function exe_armada_summon_2() {
+	exe( "VOLT 10 - 2 | Summon II | play Armada Goon II from hand or crypt" );
+}
+
+function exe_armada_wipe() {
+	exe_cost = "LOSS"
+	exe_name = "Clone Wipe"
+}
+
+function exe_armada_sentry_trap() {
+	exe( "TRAP     | Attack | ATK 2 DEF 2" );
+}
+
+
+`
+verb = VOLT  5 - 1 | Summon I   | play Armada Goon from hand or crypt
+verb = VOLT 10 - 2 | Summon II  | play Armada Goon II from hand or crypt
+verb = LOSS        |  | banish all Armada Goon from crypt
+`
+
+// verb type
+
+const vt = {
+	play : 0x0,
+	cost : 0x1,
+	move : 0x2,
+	flee : 0x3,
+	trip : 0x4,
+	loss : 0x5,
+	kill : 0x6,
+	goal : 0x7,
+	trap : 0x9,
+	flip : 0xA,
+};
+
+// verb
+
+function verb_t( verb_type, power_type, threshold, delta, exe ) {
+	this.verb_type       = verb_type;
+
+	if ( verb_type == vt.cost ) {
+		this.power_type      = power_type;
+		this.power_threshold = threshold;
+		this.power_delta     = delta;
+		this.exe             = exe;
+	}
+}
+
+var verb = {};
+
+verb.armada_deploy             = new verb_t( vt.cost, exe_armada_deploy  , pt.ammo,  6, -6 );
+verb.armada_summon_1           = new verb_t( vt.cost, exe_armada_summon_1, pt.volt,  5, -1 );
+verb.armada_summon_2           = new verb_t( vt.cost, exe_armada_summon_2, pt.volt, 10, -2 );
+verb.armada_wipe               = new verb_t( vt.loss, exe_armada_wipe                      );
+verb.verb_armada_sentry_trap   = new verb_t( vt.trap, exe_armada_sentry_trap               );
+verb.verb_armada_sentry_attack = new verb_t( vt.cost, exe_armada_sentry_attack, 0          );
+
+var app_cdef_default = [];
+
+function push( ...args ) {
+	app_cdef_default.push( new cdef_t( args ) );
+}
+
+push( cset.xxx, ct.power, "AMMO", pt.ammo ); // 0 A
+push( cset.xxx, ct.power, "CASH", pt.cash ); // 1 C
+push( cset.xxx, ct.power, "FIRE", pt.fire ); // 2 I
+push( cset.xxx, ct.power, "FUEL", pt.fuel ); // 3 U
+push( cset.xxx, ct.power, "GOOP", pt.goop ); // 4 P
+push( cset.xxx, ct.power, "GROG", pt.grog ); // 5 G
+push( cset.xxx, ct.power, "GRUB", pt.grub ); // 6 B
+push( cset.xxx, ct.power, "LIFE", pt.life ); // 7 L
+push( cset.xxx, ct.power, "MANA", pt.mana ); // 8 N
+push( cset.xxx, ct.power, "MEAT", pt.meat ); // 9 M
+push( cset.xxx, ct.power, "RUBY", pt.ruby ); // A R
+push( cset.xxx, ct.power, "VOLT", pt.volt ); // B V
+
+push( cset.ai1, ct.basic, "Armada Dropship",      {}, "",                      [ verb.armada_deploy ] );
+push( cset.ai1, ct.basic, "Armada Goon Factory",  {}, "Hero Skedar Volt Tech", [ verb.armada_summon_1, verb.armada_summon_2, verb.armada_wipe ] );
+push( cset.ai1, ct.basic, "Armada Sentry Turret", {}, "Volt Tech",             [ verb_armada_sentry_trap, verb_armada_sentry_attack ] );
+push( cset.ai1, ct.basic, "Armada Alarm System",  {}, "Volt Tech",             [] );
+push( cset.ai1, ct.actor, "Armada Goon I",        {}, "Skedar Clone Coward",   [] );
+push( cset.ai1, ct.actor, "Armada Goon II",       {}, "Skedar Clone Coward",   [] );
+push( cset.ai1, ct.actor, "The Albino",           {}, "Hero Armada Skedar",    [] );
+
+push( cset.xxx, -1 ); // face-down card
+
+`
+
+
+[card]
+name = Armada Goon I
+type = Actor
+flag = Zenith Man, Skedar Clone, Armada Coward
+stat = BODY 3 CARRY 1 RESCUE 3 AP 3
+verb = CALL     | Advance     | tempo push 1                                   | ATK 0 DEF 0
+verb = WAIT + 1 | Wait        |                                                | ATK 0 DEF 1
+verb = 1 AP + 2 | Reload      | AP + 1 for all Armada Goon in column, AMMO - 1 | ATK 0 DEF 1
+verb = 2 AP - 2 | 556 Attack  | AP + 1 for all Armada Goon in column           | ATK 2 DEF 0
+verb = LOSS     | Detonate    | AMMO - 1                                       | ATK 3 DEF 0
+
+[card]
+name = Armada Goon II
+type = Actor
+flag = Zenith Man, Skedar Clone, Armada Coward
+stat = BODY 3 CARRY 2 RESCUE 3 AP 2
+verb = CALL     | Advance     | tempo push 1                                   | ATK 0 DEF 0
+verb = WAIT + 1 | Wait        |                                                | ATK 0 DEF 1
+verb = 1 AP + 2 | Reload      | AP + 1 for all Armada Goon in column, AMMO - 1 | ATK 0 DEF 1
+verb = 2 AP - 2 | 556 Attack  | AP + 1 for all Armada Goon in column           | ATK 2 DEF 0
+verb = 2 AP - 2 | Frag Attack | AMMO - 2                                       | ATK 3 DEF 0
+
+[card]
+name = The Albino
+type = Actor Hero
+flag = Skedar Devil Clone
+stat = BODY 4 CARRY 2 RESCUE 3
+
+[card]
+name = Armada Sentry Turret
+type = Basic Tech
+flag = Armada
+verb =
+verb = 0 AP - 0 | Attack | ATK 2 DEF 0
+
+[card]
+name = Armada Alarm System
+type = Basic Tech
+flag = Armada
+verb = TRAP | Klaxon | VOLT + 5
+
+# Gannon
+
+[card]
+name = Gannon Dropship
+type = Basic
+flag = Gannon
+verb = CASH - 3 | Infiltrate | call actor-on-base with body <= 3 to any tempo
+verb = CASH - 3 | Exfiltrate | recall actor
+
+[card]
+name = AGT Joan
+type = Actor Hero
+flag = Zenith Man Gannon Agent
+stat = BODY 3 CARRY 3 RESCUE 2
+
+[card]
+name = RGR Dark
+type = Actor Hero
+flag = Zenith Man Gannon Agent
+stat = BODY 3 CARRY 3 RESCUE 2
+verb = PLAY | AMMO - 3, AGT Joan
+verb = GOAL | AMMO steal 3
+
+[card]
+name = CPR Jove
+type = Actor Hero
+flag = Crypto Praetor
+verb = PLAY | MANA - 3, RGR Dark
+
+# Other
+
+[card]
+name = DR Nathan Thatch
+type = Actor Hero
+flag = Zenith Man
+stat = BODY 3 CARRY 1
+
+[card]
+name = Johnny Cash the Alien
+type = Actor Hero
+flag = Asgard Devil Clone
+stat = BODY 2 CARRY 1 RESCUE 2
+
+[card]
+name = DDR Thatch 2
+type = Actor Hero
+flag = Volt Engram
+stat = BODY 1
+`
+
+function app_init() {
+	app.cdef = app.storage.get( "cdef" ) || app_cdef_default;
+	console.log( app.cdef );
+}
+
+function app_step() {
+
+}
+
+var app = new app_t();
+app_init();
+
+</script>
