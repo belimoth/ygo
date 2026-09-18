@@ -1,7 +1,0 @@
-PLAY     | Impant     | COST - ?, ??? Actor Engram       | ATK 0 DEF 0
-PLAY + 2 | Roar Ready | Enemy AP - 1 in column, COST - ? | ATK 0 DEF 0
-0 AP + 2 | Roar       | Enemy AP - 1 in column           | ATK 0 DEF 2
-3 AP - 1 | Bite       |                                  | ATK 3 DEF 2
-3 AP - 1 | Rend       | Enemy BODY -> COST               | ATK 0 DEF 2
-0 AP + X | Chew       | COST - X                         | ATK 0 DEF 1
-GOAL + 4 | Rampage    | Reverse                          | ATK 0 DEF 2

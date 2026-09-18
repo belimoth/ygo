@@ -145,6 +145,6 @@ Man - SecBlu, SecHaz, SecMag, SecNul, SecRed, SecSil
 
 DRAFT MODE
 
-all players draw from the same deck or from a draw row and play power cards to the same crypt
+all players draw from the same deck or from a draw row and play power cards to the same tomb
 
 note: generalize the draw row concept to regular mode to replace scry etc
